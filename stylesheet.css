@@ -1,0 +1,51 @@
+body{
+    background-image: url(Assets/Background/clouds-sky-weather-atmosphere-air-landscape.jpg) ;
+    background-size: cover;
+}
+
+.weatherCard-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.header{
+    padding: 5px;
+    margin: 1%;
+    align-content: center;
+}
+
+.weatherCard-temp> h3{
+    margin: 40% 0;
+}
+
+/* Weather card City */
+
+.weatherCard-city-name,.cardTitle{
+    text-align: center;
+}
+
+.weatherCard-img-img{
+    width: 10rem;
+}
+
+/* Weather Card midsection */
+.weatherCard-article{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.weatherCard-article> div{
+    margin: 10px;
+    width: 30px;
+}
+
+.img{
+    width: 50%;
+}
+
+.card{
+    justify-items: center;
+}
+
