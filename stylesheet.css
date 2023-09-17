@@ -3,6 +3,14 @@ body{
     background-size: cover;
 }
 
+header,article{
+    margin: 2%;
+}
+
+h3, h4 {
+    color: white;
+}
+
 .weatherCard-header{
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +34,7 @@ body{
 }
 
 .weatherCard-img-img{
-    width: 10rem;
+    width: 40%;
 }
 
 /* Weather Card midsection */
@@ -42,10 +50,7 @@ body{
 }
 
 .img{
-    width: 50%;
+    width: 70%;
 }
 
-.card{
-    justify-items: center;
-}
 

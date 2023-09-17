@@ -22,10 +22,6 @@
                     <h3 class="weatherCard-temp">Temperature<h3>
                 </div></center>
             </div>
-
-                <!-- weather temp -->
-
-            </div>
         </div>
     </header>
     <article>
@@ -54,8 +50,22 @@
         </div>
     </article>
 
+<div class="dropdown">
+    <div>
+        <!-- Continent -->
+        <select name="continent" class="continent" id="dropDown-continent">
+            <option selected disabled>--Select the Continent--</option>
+        </select>
+        <!-- Country -->
+        <select name="country" class="continent" id="dropDown-country">
+            <option value="default">--Country--</option>
+        </select>
 
 
+        <button class="load" onclick="continent()">Load the continent List</button>
+    </div>
+
+</div>
 
 
 
