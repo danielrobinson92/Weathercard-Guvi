@@ -7,10 +7,6 @@ header,article{
     margin: 2%;
 }
 
-h3, h4 {
-    color: white;
-}
-
 .weatherCard-header{
     display: flex;
     flex-wrap: wrap;
@@ -48,9 +44,9 @@ h3, h4 {
     margin: 10px;
     width: 30px;
 }
-
 .img{
     width: 70%;
 }
-
-
+.dropdown{
+    margin: 10px;
+}
