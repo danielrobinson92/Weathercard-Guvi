@@ -1,12 +1,12 @@
 async function weather(){
     let response = await fetch("https://restcountries.com/v3.1/all");
     let api = await response.json();
-    // console.log(api[0].name.common, api.length);
+    console.log(api);
     return api;
 } 
 
-async function cityWeather(){
-    let response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Pretoria&appid=f814e82d5654bab1fd6e4f931e750f2a");
+async function cityWeather(country = 'india'){
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=f814e82d5654bab1fd6e4f931e750f2a`);
     let api = await response.json();
     console.log(api);
 }
@@ -27,6 +27,8 @@ async function continent (){
         x.setAttribute ("value",continent[i]);
         htmlContinent.append(x);
     }
+
+    // Country
     // Get the value of selected continent from the drop down & filter the country
     htmlContinent.addEventListener("change",function(){
         let selectedContinent = htmlContinent.value;
@@ -38,28 +40,44 @@ async function continent (){
                     x.innerHTML = `${response[j].name.common}`;
                     x.setAttribute ("value",response[j].name.common);
                     htmlCountry.append(x);
-                    console.log(response[j].name.common, selectedContinent);
                 }
         }
-    });
-
-    htmlCountry.addEventListener("change",function(){
-        let selectedCountry = htmlCountry.value;
-        console.log(selectedCountry);
-    });
     
+// Read the country and populate the value in HTML page
+        htmlCountry.addEventListener("change",function(){
+                let selectedCountry = htmlCountry.value;
+                let windspeed = document.getElementById("windSpeed");
+                let temperature = document.getElementById("temperature");
+                let location = document.getElementById("location");
+
+                windspeed.innerHTML = `deg:268 / gust:0.59
+                 / speed:0.63`;
+                temperature.innerHTML = "test";
+                location.innerHTML = "test";
+
+          
+
+
+
+
+
+
+            });
+        });
 }
 
-
+weather()
 // continent();
 
-weather();
 
 
+// Retriving value from API
 
+function retriveValue(country){
+    cityWeather(country);
+}
 
-
-
+retriveValue('france');
 
 
 
