@@ -1,14 +1,31 @@
 async function weather(){
     let response = await fetch("https://restcountries.com/v3.1/all");
     let api = await response.json();
-    console.log(api);
     return api;
 } 
 
-async function cityWeather(country = 'india'){
+async function city(country){
+    let responseCity = await fetch(`https://restcountries.com/v3.1/name/${country}?fullText=true`);
+    let apiCity = await responseCity.json();
+    let cityName = document.getElementById("city-name");
+    cityName.innerHTML = `${apiCity[0].capital[0]}`
+}
+
+
+async function cityWeather(country){
     let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${country}&appid=f814e82d5654bab1fd6e4f931e750f2a`);
     let api = await response.json();
-    console.log(api);
+    let windspeed = document.getElementById("windSpeed");
+    let temperature = document.getElementById("temperature");
+    let location = document.getElementById("location");
+    let temperature_description = document.getElementById("weatherCard-temp");
+        windspeed.innerHTML = `speed: ${api.wind.speed}, deg: ${api.wind.deg}`;
+        temperature.innerHTML = `Temp_max : ${api.main.temp_max}\u00B0 / Temp_min : ${api.main.temp_min}\u00B0`;
+        location.innerHTML = `Lat : ${api.coord.lat} / Lon : ${api.coord.lon}`;
+        temperature_description.innerHTML = `${api.weather[0].description}, feels like ${api.main.feels_like}\u00B0`
+        console.log(api);
+        city(country);  //Calling function to print the city name
+    
 }
 
 // Continent
@@ -45,44 +62,11 @@ async function continent (){
     
 // Read the country and populate the value in HTML page
         htmlCountry.addEventListener("change",function(){
-                let selectedCountry = htmlCountry.value;
-                let windspeed = document.getElementById("windSpeed");
-                let temperature = document.getElementById("temperature");
-                let location = document.getElementById("location");
-
-                windspeed.innerHTML = `deg:268 / gust:0.59
-                 / speed:0.63`;
-                temperature.innerHTML = "test";
-                location.innerHTML = "test";
-
-          
-
-
-
-
-
-
+            let selectedCountry = htmlCountry.value;
+            cityWeather(selectedCountry);
             });
         });
 }
-
-weather()
-// continent();
-
-
-
-// Retriving value from API
-
-function retriveValue(country){
-    cityWeather(country);
-}
-
-retriveValue('france');
-
-
-
-
-
 
 
 
