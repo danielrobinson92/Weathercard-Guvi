@@ -1,3 +1,11 @@
+continent();
+
+function clear(){
+    continent();
+    let htmlCountry = document.getElementById(`dropDown-country`);
+    htmlCountry.innerText = ``;
+}
+
 async function weather(){
     let response = await fetch("https://restcountries.com/v3.1/all");
     let api = await response.json();
@@ -38,6 +46,9 @@ async function continent (){
     let continent = temp.filter((x,i)=> temp.indexOf(x) == i);
     let htmlContinent = document.getElementById(`dropDown-continent`);
     htmlContinent.innerHTML = `<option value="default">--Continent--</option>`;
+    let htmlCountry = document.getElementById(`dropDown-country`);
+        htmlCountry.innerHTML = `<option value="default">--Country--</option>`;
+        
     for (let i = 0; i < continent.length; i++){
         var x = document.createElement('option');
         x.innerHTML = `${continent[i]}`;
@@ -49,8 +60,7 @@ async function continent (){
     // Get the value of selected continent from the drop down & filter the country
     htmlContinent.addEventListener("change",function(){
         let selectedContinent = htmlContinent.value;
-        let htmlCountry = document.getElementById(`dropDown-country`);
-        htmlCountry.innerHTML = `<option value="default">--Country--</option>`;
+        
             for (let j = 0; j < response.length; j++){
                 if (selectedContinent == response[j].continents[0]){
                     var x = document.createElement('option');

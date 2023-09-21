@@ -6,67 +6,66 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <body style="background-color: beige;">
-    <header class="weatherCard">
-        <div class="weatherCard-city header">
-            <!-- City Name -->
-            <h2 class="weatherCard-city-name" id = "city-name">City Name</h2>
-        </div>
-        <div class="weatherCard-header">   <center>      
-            <div class="weatherCard-img header">
-                <!-- weather image -->
-                
-                    <img class="weatherCard-img-img" src="Assets/disaster.png" alt="Weather">
+    <center class="header-title"><h5>Select continent & Country to populate the weather of Capital City</h5></center>
+    <div class="flex">
+        <div class="input">
+            <div class="dropdown">
                 <div>
-                    <h3 class="weatherCard-temp" id="weatherCard-temp">Temperature<h3>
-                </div></center>
+                    <!-- Continent -->
+                    <select name="continent" class="form-select continent" id="dropDown-continent">
+                        <option selected disabled>--Continent--</option>
+                    </select>
+                    <!-- Country --> <br>
+                    <select name="country" class="form-select" id="dropDown-country">
+                        <option value="default">--Country--</option>
+                    </select>
+                </div><center>
+                <button type="button" class="btn btn-sm btn-primary" onclick="continent();">Reset Dropdown</button></center>
             </div>
         </div>
-    </header>
-    <article>
-        <div class="weatherCard-article">
-                <!-- High & Low temp -->
-                <div class="card bg-transparent" style="width: 10rem;"><center>
-                    <img class="img" src="Assets/wind Speed.png" alt="Weather"></center>
-                    <div class="card-body">
-                    <h5 class="cardTitle" id="windSpeed">Choose the Country</h5>
-                    </div>
+        <div class="output">
+                <div class="weatherCard-city header">
+                    <!-- City Name -->
+                    <h2 class="weatherCard-city-name" id = "city-name">City Name</h2>
                 </div>
-                <!-- feels like -->
-                <div class="card bg-transparent" style="width: 10rem;"><center>
-                    <img class="img" src="Assets/thermometer.png" alt="Weather"></center>
-                    <div class="card-body">
-                    <h5 class="cardTitle" id="temperature">Choose the Country</h5>
+                <div class="weatherCard-header">   <center>      
+                    <div class="weatherCard-img header">
+                        <!-- weather image -->
+                            <img class="weatherCard-img-img" src="Assets/disaster.png" alt="Weather">
+                        <div>
+                            <h3 class="weatherCard-temp" id="weatherCard-temp">Temperature<h3>
+                        </div>
                     </div>
+                </center>
                 </div>
-                <!-- humidity -->
-                <div class="card bg-transparent" style="width: 10rem;"><center>
-                    <img class="img" src="Assets/placeholder.png" alt="Weather"></center>
-                    <div class="card-body">
-                    <h5 class="cardTitle" id="location">Choose the Country</h5>
-                    </div>
+                <div class="weatherCard-article">
+                        <!-- High & Low temp -->
+                        <div class="card bg-transparent" style="width: 10rem;"><center>
+                            <img class="img" src="Assets/wind Speed.png" alt="Weather"></center>
+                            <div class="card-body">
+                            <h5 class="cardTitle" id="windSpeed">Choose the Country</h5>
+                            </div>
+                        </div>
+                        <!-- feels like -->
+                        <div class="card bg-transparent" style="width: 10rem;"><center>
+                            <img class="img" src="Assets/thermometer.png" alt="Weather"></center>
+                            <div class="card-body">
+                            <h5 class="cardTitle" id="temperature">Choose the Country</h5>
+                            </div>
+                        </div>
+                        <!-- humidity -->
+                        <div class="card bg-transparent" style="width: 10rem;"><center>
+                            <img class="img" src="Assets/placeholder.png" alt="Weather"></center>
+                            <div class="card-body">
+                            <h5 class="cardTitle" id="location">Choose the Country</h5>
+                            </div>
+                        </div>
                 </div>
         </div>
-    </article>
-
-<div class="dropdown">
-    <div>
-        <!-- Continent -->
-        <select name="continent" class="continent" id="dropDown-continent">
-            <option selected disabled>--Continent--</option>
-        </select>
-        <!-- Country -->
-        <select name="country" class="continent" id="dropDown-country">
-            <option value="default">--Country--</option>
-        </select>
-
-
-        <button class="load" onclick="continent()">Load the continent List</button>
-    </div>
-
-</div>
-
+    </div>    
 
 
     <script src="script.js"></script>

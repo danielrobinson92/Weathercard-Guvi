@@ -3,8 +3,23 @@ body{
     background-size: cover;
 }
 
+select{
+    margin-top: 2px;
+}
+
 header,article{
     margin: 2%;
+}
+
+.header-title{
+    margin: 2px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .weatherCard-header{
@@ -30,7 +45,7 @@ header,article{
 }
 
 .weatherCard-img-img{
-    width: 40%;
+    width: 30%;
 }
 
 /* Weather Card midsection */
@@ -45,8 +60,10 @@ header,article{
     width: 30px;
 }
 .img{
-    width: 70%;
+    width: 40%;
 }
 .dropdown{
     margin: 10px;
+    width: 400px;
+    position: relative;
 }
