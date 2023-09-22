@@ -1,6 +1,6 @@
 body{
-    background-image: url(Assets/Background/clouds-sky-weather-atmosphere-air-landscape.jpg) ;
     background-size: cover;
+    gradiant
 }
 
 select{
@@ -15,12 +15,14 @@ header,article{
     margin: 2px;
 }
 
-.container{
+.flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin: 10px;
 }
+
 
 .weatherCard-header{
     display: flex;
@@ -61,9 +63,14 @@ header,article{
 }
 .img{
     width: 40%;
+    margin: 0px 10px;
 }
 .dropdown{
     margin: 10px;
-    width: 400px;
+    width: 100%;
     position: relative;
+}
+
+.btn{
+    margin: 20px 0 0 ;
 }
